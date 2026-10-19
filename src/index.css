@@ -1,0 +1,127 @@
+@import "tailwindcss";
+@import "tailwindcss";
+
+body {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+main {
+  width: min(100% - 2rem, 1200px);
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+}
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+section {
+  margin: 2rem 0;
+}
+
+section > p {
+  color: #475569;
+  margin-bottom: 1rem;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: white;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.75rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+select,
+button {
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+}
+
+select {
+  min-width: 11rem;
+  border: 1px solid #64748b;
+  background: white;
+}
+
+button {
+  background: #1e40af;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1e3a8a;
+}
+
+article > :not(img) {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+article h3 {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+article address {
+  font-style: normal;
+  color: #475569;
+}
+
+article ul {
+  margin: 0.75rem 0;
+}
+
+article a {
+  display: inline-block;
+  margin-top: auto;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #1e40af;
+  text-decoration: underline;
+}
+
+aside {
+  padding: 1.25rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.75rem;
+  background: white;
+}
+
+aside > p:first-child {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+a:focus-visible,
+button:focus-visible,
+select:focus-visible {
+  outline: 3px solid #f97316;
+  outline-offset: 3px;
+}
