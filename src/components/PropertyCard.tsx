@@ -18,18 +18,20 @@ export default function PropertyCard({ property }: PropertyCardProps) {
   src={property.imageUrl}
   alt={property.imageAlt}
 />
-      <h3>{property.title}</h3>
-      <address>{property.address}</address>
-      <p>{price}</p>
+      <div className="flex flex-1 flex-col gap-3 p-4">
+        <h3>{property.title}</h3>
+        <address>{property.address}</address>
+        <p>{price}</p>
 
-      <ul>
-        <li>{property.bedrooms} bedrooms</li>
-        <li>{property.bathrooms} bathrooms</li>
-      </ul>
+        <ul>
+          <li>{property.bedrooms} bedrooms</li>
+          <li>{property.bathrooms} bathrooms</li>
+        </ul>
 
-      <a href={property.listingUrl}>
-       Explore homes near {property.address}
-      </a>
+        <a className="mt-auto" href={property.listingUrl}>
+          Explore homes near {property.address}
+        </a>
+      </div>
     </article>
   )
 }
