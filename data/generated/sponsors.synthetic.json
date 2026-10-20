@@ -1,0 +1,20 @@
+[
+  {
+    "sponsor_id": "sponsor-move-01",
+    "business_name": "Example City Moving Co.",
+    "category": "moving",
+    "website_url": "https://example.com/moving"
+  },
+  {
+    "sponsor_id": "sponsor-clean-01",
+    "business_name": "Example City Home Cleaning",
+    "category": "cleaning",
+    "website_url": "https://example.com/cleaning"
+  },
+  {
+    "sponsor_id": "sponsor-inspect-01",
+    "business_name": "Example City Property Inspections",
+    "category": "home_inspection",
+    "website_url": "https://example.com/inspection"
+  }
+]

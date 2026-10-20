@@ -1,0 +1,8 @@
+[
+  { "property_id": "property-001", "sponsor_id": "sponsor-move-01" },
+  { "property_id": "property-002", "sponsor_id": "sponsor-clean-01" },
+  { "property_id": "property-003", "sponsor_id": "sponsor-inspect-01" },
+  { "property_id": "property-004", "sponsor_id": "sponsor-move-01" },
+  { "property_id": "property-005", "sponsor_id": "sponsor-clean-01" },
+  { "property_id": "property-005", "sponsor_id": "sponsor-inspect-01" }
+]

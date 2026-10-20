@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "property_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "street_address": {
+      "type": "string",
+      "minLength": 3
+    },
+    "city": {
+      "type": "string",
+      "minLength": 2
+    },
+    "state": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}$"
+    },
+    "zip_code": {
+      "type": "string",
+      "pattern": "^\\d{5}(-\\d{4})?$"
+    },
+    "price": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "bedrooms": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "bathrooms": {
+      "type": "number",
+      "minimum": 0
+    },
+    "square_feet": {
+      "type": "integer",
+      "exclusiveMinimum": 0,
+      "maximum": 9007199254740991
+    },
+    "amenities": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "air_conditioning",
+          "balcony",
+          "dishwasher",
+          "garage",
+          "laundry",
+          "pool",
+          "solar_panels",
+          "yard"
+        ]
+      }
+    },
+    "local_sponsors": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "required": [
+    "property_id",
+    "title",
+    "street_address",
+    "city",
+    "state",
+    "zip_code",
+    "price",
+    "bedrooms",
+    "bathrooms",
+    "square_feet",
+    "amenities",
+    "local_sponsors"
+  ],
+  "additionalProperties": false
+}

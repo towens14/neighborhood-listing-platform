@@ -1,0 +1,91 @@
+{
+  "type": "object",
+  "properties": {
+    "listings": {
+      "minItems": 5,
+      "maxItems": 5,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "property_id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "street_address": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "zip_code": {
+            "type": "string"
+          },
+          "price": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          },
+          "bedrooms": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          },
+          "bathrooms": {
+            "type": "number",
+            "minimum": 0
+          },
+          "square_feet": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9007199254740991
+          },
+          "amenities": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "air_conditioning",
+                "balcony",
+                "dishwasher",
+                "garage",
+                "laundry",
+                "pool",
+                "solar_panels",
+                "yard"
+              ]
+            }
+          },
+          "local_sponsors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "property_id",
+          "title",
+          "street_address",
+          "city",
+          "state",
+          "zip_code",
+          "price",
+          "bedrooms",
+          "bathrooms",
+          "square_feet",
+          "amenities",
+          "local_sponsors"
+        ]
+      }
+    }
+  },
+  "required": [
+    "listings"
+  ]
+}
