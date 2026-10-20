@@ -1,49 +1,42 @@
 import { useState } from 'react'
+import { z } from 'zod'
+import listingsJson from '../data/generated/property-listings.synthetic.json'
+import sponsorsJson from '../data/generated/sponsors.synthetic.json'
+import heroImage from './assets/hero.png'
 import PropertyCard from './components/PropertyCard'
 import SearchFilters, { type FilterValues } from './components/SearchFilters'
 import SponsorBanner from './components/SponsorBanner'
+import {
+  PropertyListingsSchema,
+  SponsorRecordSchema,
+} from './schemas/listingSchema'
 import type { Property, Sponsor } from './types'
 
-const properties: Property[] = [
-  {
-    id: 'home-1',
-    title: 'Sunny bungalow',
-    address: 'Los Angeles, CA',
-    price: 285000,
-    bedrooms: 2,
-    bathrooms: 1,
-    imageUrl: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800',
-    imageAlt: 'Modern white house beside a swimming pool',
-    listingUrl: 'https://www.zillow.com/homes/Los-Angeles,-CA_rb/',
-  },
-  {
-    id: 'home-2',
-    title: 'Modern townhome',
-    address: 'Inglewood, CA',
-    price: 475000,
-    bedrooms: 3,
-    bathrooms: 2,
-    imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800',
-    imageAlt: 'Dark modern house with large windows and a lawn',
-    listingUrl: 'https://www.zillow.com/homes/Inglewood,-CA_rb/',
-  },
-  {
-    id: 'home-3',
-    title: 'Spacious family home',
-    address: 'Pasadena, CA',
-    price: 725000,
-    bedrooms: 4,
-    bathrooms: 3,
-    imageUrl: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800',
-    imageAlt: 'Bright living room with sofas and an open kitchen',
-    listingUrl: 'https://www.zillow.com/homes/Pasadena,-CA_rb/',
-  },
-]
+const validatedListings = PropertyListingsSchema.parse(listingsJson)
+const validatedSponsors = z.array(SponsorRecordSchema).parse(sponsorsJson)
+
+const properties: Property[] = validatedListings.listings.map((listing) => ({
+  id: listing.property_id,
+  title: listing.title,
+  address: `${listing.street_address}, ${listing.city}, ${listing.state} ${listing.zip_code}`,
+  price: listing.price,
+  bedrooms: listing.bedrooms,
+  bathrooms: listing.bathrooms,
+  imageUrl: heroImage,
+  imageAlt: `Representative image for fictional property in ${listing.city}, ${listing.state}`,
+  listingUrl: `https://example.com/listings/${encodeURIComponent(listing.property_id)}`,
+}))
+
+const firstSponsor = validatedSponsors[0]
+
+if (!firstSponsor) {
+  throw new Error('The demo needs at least one validated sponsor record.')
+}
 
 const sponsor: Sponsor = {
-  businessName: 'Neighborhood Home Services',
-  message: 'Explore local help for your next move.',
-  websiteUrl: 'https://www.google.com/maps/search/moving+services+Los+Angeles/',
+  businessName: firstSponsor.business_name,
+  message: 'Fictional sponsor example for this demonstration.',
+  websiteUrl: firstSponsor.website_url,
 }
 
 function App() {
