@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "minItems": 5,
+  "maxItems": 5,
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "property_id": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      },
+      "title": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      },
+      "description": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      },
+      "address": {
+        "type": "object",
+        "properties": {
+          "street": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "city": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "state": {
+            "type": "string",
+            "pattern": "^[A-Z]{2}$"
+          }
+        },
+        "required": [
+          "street",
+          "city",
+          "state"
+        ],
+        "additionalProperties": false
+      },
+      "zip_code": {
+        "type": "string",
+        "pattern": "^\\d{5}$"
+      },
+      "price": {
+        "type": "number",
+        "minimum": 0
+      },
+      "bedrooms": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9007199254740991
+      },
+      "bathrooms": {
+        "type": "number",
+        "minimum": 0
+      },
+      "square_feet": {
+        "type": "number",
+        "exclusiveMinimum": 0
+      },
+      "amenities": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "parking",
+            "laundry",
+            "air_conditioning",
+            "pool",
+            "elevator",
+            "patio"
+          ]
+        }
+      },
+      "local_sponsors": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      }
+    },
+    "required": [
+      "property_id",
+      "title",
+      "description",
+      "address",
+      "zip_code",
+      "price",
+      "bedrooms",
+      "bathrooms",
+      "square_feet",
+      "amenities",
+      "local_sponsors"
+    ],
+    "additionalProperties": false
+  }
+}
