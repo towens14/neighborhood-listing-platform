@@ -83,6 +83,33 @@ Each assumption needs confirmation from real stakeholders.
 - **Friction:** Adapting the offer for different formats takes time. Image cropping is hard to predict on a phone, and older copies can circulate after an offer changes. (LS-01, LS-02, LS-03)
 - **Assumption to validate:** Would a mobile preview showing the crop and offer details help sponsors catch errors before publishing?
 
+## Product Backlog
+
+These candidate stories come from simulated discovery. Priority is proposed.
+Assign each story to a teammate when you create the GitHub Project board.
+
+| ID | Priority | User story | Source |
+| --- | --- | --- | --- |
+| US-01 | High | As a property professional, I want to save listing details in one draft so that I can reuse the same information when I post in multiple places. | PP-01, PP-02 |
+| US-02 | High | As a property professional, I want to review the listing before publishing so that I can verify its details. | PP-02 |
+| US-03 | Medium | As a property professional, I want to update a published listing’s availability so that prospective renters can see its current status. | PP-02 |
+| US-04 | High | As a property professional, I want rent and contact information to appear as text so that readers can access those details even if they cannot read the listing image. | PP-03 |
+| US-05 | High | As a local sponsor, I want to preview my offer on a phone-sized screen so that I can check the image crop and offer details before it goes live. | LS-02, LS-03 |
+| US-06 | High | As a local sponsor, I want to approve the price, dates, and restrictions before someone else publishes my offer so that customers see the terms I reviewed. | LS-02 |
+| US-07 | Medium | As a local sponsor, I want the expiration date and restrictions to appear as text so that customers can read the terms even if they cannot read the graphic. | LS-01, LS-03 |
+| US-08 | Low | As a property professional, I want to see how many tour requests a listing received so that I can gauge interest. | PP-03 |
+
+### Acceptance Criteria for High-Priority Stories
+
+| ID | Given | When | Then |
+| --- | --- | --- | --- |
+| US-01 | A property professional has entered a listing’s price, availability, and amenities | They save the draft and reopen it | The saved values appear in the corresponding fields and the draft remains unpublished. |
+| US-02 | A listing draft is awaiting review | The property professional opens the preview and approves it | The preview shows the saved listing details and the listing becomes eligible for publication. |
+| US-04 | A published listing has a photo, rent, and contact information | A visitor opens it with images disabled | The rent and contact information are still visible as text. |
+| US-05 | A sponsor draft contains an image, price, and expiration date | The sponsor opens the preview at a 360 px viewport | The preview shows the image crop used in the mobile layout, and the price and expiration date are readable without horizontal scrolling. |
+| US-06 | A sponsor offer is awaiting approval | A publisher attempts to publish it before the sponsor approves it | Publication is blocked and the offer stays unpublished. |
+| US-06 | A sponsor has approved an offer | Someone changes its price, dates, or restrictions before publication | The offer returns to awaiting approval and publication is blocked until the sponsor approves the revised terms. |
+
 ## AI Provenance Log
 ### Gemini — Interview question review
 - Prompt: Review these eight interview questions for a student project. Flag any leading wording, unsupported assumptions, or requests for sensitive information. Suggest neutral rewrites only where needed, and explain each change briefly.## Discovery Interview Guide
