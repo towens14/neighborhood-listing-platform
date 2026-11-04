@@ -110,6 +110,24 @@ Assign each story to a teammate when you create the GitHub Project board.
 | US-06 | A sponsor offer is awaiting approval | A publisher attempts to publish it before the sponsor approves it | Publication is blocked and the offer stays unpublished. |
 | US-06 | A sponsor has approved an offer | Someone changes its price, dates, or restrictions before publication | The offer returns to awaiting approval and publication is blocked until the sponsor approves the revised terms. |
 
+## Content Approval Workflow
+
+This is a proposed workflow based on simulated discovery.
+
+### Property listings
+1. The property professional saves a draft and previews its price, availability,
+   amenities, and contact information.
+2. The property professional confirms any unclear details with the property
+   owner, then approves the draft. Only approved listings can be published.
+3. The published listing displays rent and contact information as text.
+
+### Sponsor offers
+1. The sponsor reviews the offer's price, dates, restrictions, and claims.
+2. The publisher can publish only after the sponsor approves the offer.
+3. If the price, dates, or restrictions change before publication, the offer
+   returns to Awaiting Approval. The sponsor must approve the revised terms.
+4. The published offer displays its expiration date and restrictions as text.
+
 ## AI Provenance Log
 ### Gemini — Interview question review
 - Prompt: Review these eight interview questions for a student project. Flag any leading wording, unsupported assumptions, or requests for sensitive information. Suggest neutral rewrites only where needed, and explain each change briefly.## Discovery Interview Guide
