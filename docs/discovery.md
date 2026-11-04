@@ -64,6 +64,25 @@ inference to validate with real stakeholders.
 | Updating published content | PP-02, LS-02 (both roles). LS-02 specifically mentions older copies circulating. | After an edit is published, show the latest approved details on the platform page. | Would an updated timestamp, expiration notice, or list of places where the content was shared help? |
 | Measuring results | PP-03, LS-03 (both roles) | Show a count of tour requests per listing. Evaluate redemption tracking for sponsors who use discount codes. | Which actions count as success, and how could the platform reliably capture them? |
 
+## Stakeholder Personas
+
+These personas are working hypotheses based on simulated interview notes.
+Each assumption needs confirmation from real stakeholders.
+
+### Property Professional
+
+- **Goal:** Publish accurate property listings that generate relevant inquiries and tour requests. (PP-01, PP-03)
+- **Workflow:** Collect property details and photos, review the draft, and ask the property owner to confirm unclear information. Update the listing when availability changes. (PP-01, PP-02)
+- **Friction:** Keeping details consistent across channels takes time. A cramped phone editor makes details easy to miss, and readers may have trouble accessing rent or contact information placed only in an image. (PP-01, PP-03)
+- **Assumption to validate:** Would keeping one editable listing draft reduce the effort of updating multiple channels?
+
+### Local Sponsor
+
+- **Goal:** Share a clear offer with nearby shoppers and, when a discount code is available, gauge interest through redemptions. (LS-01, LS-03)
+- **Workflow:** Draft a short offer, choose a photo, and check the price, dates, and restrictions. Preview the offer if someone else will publish it. (LS-01, LS-02)
+- **Friction:** Adapting the offer for different formats takes time. Image cropping is hard to predict on a phone, and older copies can circulate after an offer changes. (LS-01, LS-02, LS-03)
+- **Assumption to validate:** Would a mobile preview showing the crop and offer details help sponsors catch errors before publishing?
+
 ## AI Provenance Log
 ### Gemini — Interview question review
 - Prompt: Review these eight interview questions for a student project. Flag any leading wording, unsupported assumptions, or requests for sensitive information. Suggest neutral rewrites only where needed, and explain each change briefly.## Discovery Interview Guide
