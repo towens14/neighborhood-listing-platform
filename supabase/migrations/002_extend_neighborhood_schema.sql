@@ -1,4 +1,36 @@
-created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+-- Proposed second migration for neighborhood-listing-platform.
+-- Review against the live database before applying. Depends on 001_create_properties_rls.sql.
+-- Tables total: properties (existing), profiles, sponsors, property_sponsors, inquiries.
+BEGIN;
+
+CREATE TABLE public.profiles (
+  user_id UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
+  display_name TEXT NOT NULL CHECK (length(trim(display_name)) BETWEEN 1 AND 100),
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE public.sponsors (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  owner_id UUID NOT NULL REFERENCES auth.users(id),
+  name TEXT NOT NULL CHECK (length(trim(name)) > 0),
+  website_url TEXT,
+  status TEXT NOT NULL DEFAULT 'draft' CHECK (status IN ('draft','pending','approved','rejected')),
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE public.property_sponsors (
+  property_id UUID NOT NULL REFERENCES public.properties(id) ON DELETE CASCADE,
+  sponsor_id UUID NOT NULL REFERENCES public.sponsors(id) ON DELETE CASCADE,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  PRIMARY KEY (property_id, sponsor_id)
+);
+
+CREATE TABLE public.inquiries (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  property_id UUID NOT NULL REFERENCES public.properties(id) ON DELETE CASCADE,
+  sender_id UUID NOT NULL REFERENCES auth.users(id),
+  message TEXT NOT NULL CHECK (length(trim(message)) BETWEEN 1 AND 2000),
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
 CREATE INDEX sponsors_owner_id_idx ON public.sponsors(owner_id);
