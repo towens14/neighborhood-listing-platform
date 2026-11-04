@@ -18,6 +18,20 @@ The platform helps property professionals present listings and local sponsors sh
 7. What barriers, if any, make it harder for you to create, review, or publish content?
 8. What barriers, if any, might your audience encounter when reading or interacting with that content?
 
+## Interview Invitation and Consent
+
+**Draft for instructor review. For this assignment, we plan to use a simulated interview.**
+
+### Invitation
+
+Hi, I’m a Cal State LA student working on a class project about how property professionals and local sponsors prepare, review, and publish content. I’d like to invite you to a 15-minute interview about your workflow. Taking part is voluntary.
+
+With your permission, I’ll take brief notes without your name or identifying details. Our team will use those notes to develop project requirements. De-identified themes and requirements may appear in our class submission and GitHub repository. The interview will not be recorded.
+
+### Consent
+
+Before we start, do you agree to participate and allow me to take brief, de-identified notes for the uses described above? You can skip any question or stop at any time. I’ll proceed only if you agree.
+
 ## AI Provenance Log
 ### Gemini — Interview question review
 - Prompt: Review these eight interview questions for a student project. Flag any leading wording, unsupported assumptions, or requests for sensitive information. Suggest neutral rewrites only where needed, and explain each change briefly.## Discovery Interview Guide
