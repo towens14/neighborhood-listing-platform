@@ -3,6 +3,8 @@ import PropertyCard from './components/PropertyCard'
 import SearchFilters, { type FilterValues } from './components/SearchFilters'
 import SponsorBanner from './components/SponsorBanner'
 import type { Property, Sponsor } from './types'
+import Login from './components/Login'
+
 
 const properties: Property[] = [
   {
@@ -61,6 +63,7 @@ function App() {
   return (
     <main>
       <h1>Neighborhood listings</h1>
+      <Login />
       <SearchFilters onSearch={setFilters} />
 
       <section aria-labelledby="listings-heading">
