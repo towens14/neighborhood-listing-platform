@@ -27,9 +27,9 @@ export default function PropertyCard({ property }: PropertyCardProps) {
         <li>{property.bathrooms} bathrooms</li>
       </ul>
 
-      <a href={property.listingUrl}>
-       Explore homes near {property.address}
-      </a>
+     <a href={property.listingUrl}>
+  Read the demo notice for {property.title}
+</a> 
     </article>
   )
 }

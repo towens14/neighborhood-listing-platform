@@ -1,0 +1,87 @@
+[
+  {
+    "property_id": "PROP-001",
+    "title": "Maple Court Cottage",
+    "description": "Synthetic student-project listing for a fictional two-bedroom cottage with a patio.",
+    "address": {
+      "street": "101 Imaginary Maple Court",
+      "city": "Exampleville",
+      "state": "CA"
+    },
+    "zip_code": "90001",
+    "price": 525000,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "square_feet": 1050,
+    "amenities": ["parking", "patio"],
+    "local_sponsors": []
+  },
+  {
+    "property_id": "PROP-002",
+    "title": "Willow Terrace Apartment",
+    "description": "Synthetic student-project listing for a fictional apartment with laundry and elevator access.",
+    "address": {
+      "street": "202 Fictional Willow Terrace",
+      "city": "Exampleville",
+      "state": "CA"
+    },
+    "zip_code": "90002",
+    "price": 410000,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "square_feet": 780,
+    "amenities": ["laundry", "elevator"],
+    "local_sponsors": []
+  },
+  {
+    "property_id": "PROP-003",
+    "title": "Cedar Lane Family Home",
+    "description": "Synthetic student-project listing for a fictional three-bedroom home with parking and air conditioning.",
+    "address": {
+      "street": "303 Invented Cedar Lane",
+      "city": "Exampleville",
+      "state": "CA"
+    },
+    "zip_code": "90003",
+    "price": 685000,
+    "bedrooms": 3,
+    "bathrooms": 2.5,
+    "square_feet": 1680,
+    "amenities": ["parking", "air_conditioning", "laundry"],
+    "local_sponsors": []
+  },
+  {
+    "property_id": "PROP-004",
+    "title": "Sunrise Studio",
+    "description": "Synthetic student-project listing for a fictional studio apartment with shared laundry.",
+    "address": {
+      "street": "404 Makebelieve Sunrise Way",
+      "city": "Exampleville",
+      "state": "CA"
+    },
+    "zip_code": "90004",
+    "price": 295000,
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "square_feet": 480,
+    "amenities": ["laundry"],
+    "local_sponsors": []
+  },
+  {
+    "property_id": "PROP-005",
+    "title": "Oak Garden Townhouse",
+    "description": "Synthetic student-project listing for a fictional townhouse with a patio and shared pool.",
+    "address": {
+      "street": "505 Pretend Oak Garden Drive",
+      "city": "Exampleville",
+      "state": "CA"
+    },
+    "zip_code": "90005",
+    "price": 740000,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_feet": 1820,
+    "amenities": ["parking", "patio", "pool"],
+    "local_sponsors": []
+  }
+]

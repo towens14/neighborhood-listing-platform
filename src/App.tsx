@@ -1,49 +1,33 @@
 import { useState } from 'react'
+import generatedProperties from '../data/generated/properties.json'
+import { PropertyListSchema } from './schemas/property'
 import PropertyCard from './components/PropertyCard'
 import SearchFilters, { type FilterValues } from './components/SearchFilters'
 import SponsorBanner from './components/SponsorBanner'
 import type { Property, Sponsor } from './types'
 
-const properties: Property[] = [
-  {
-    id: 'home-1',
-    title: 'Sunny bungalow',
-    address: 'Los Angeles, CA',
-    price: 285000,
-    bedrooms: 2,
-    bathrooms: 1,
-    imageUrl: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800',
-    imageAlt: 'Modern white house beside a swimming pool',
-    listingUrl: 'https://www.zillow.com/homes/Los-Angeles,-CA_rb/',
-  },
-  {
-    id: 'home-2',
-    title: 'Modern townhome',
-    address: 'Inglewood, CA',
-    price: 475000,
-    bedrooms: 3,
-    bathrooms: 2,
-    imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800',
-    imageAlt: 'Dark modern house with large windows and a lawn',
-    listingUrl: 'https://www.zillow.com/homes/Inglewood,-CA_rb/',
-  },
-  {
-    id: 'home-3',
-    title: 'Spacious family home',
-    address: 'Pasadena, CA',
-    price: 725000,
-    bedrooms: 4,
-    bathrooms: 3,
-    imageUrl: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800',
-    imageAlt: 'Bright living room with sofas and an open kitchen',
-    listingUrl: 'https://www.zillow.com/homes/Pasadena,-CA_rb/',
-  },
-]
+const validation = PropertyListSchema.safeParse(generatedProperties)
+
+const properties: Property[] = validation.success
+  ? validation.data.map((property) => ({
+      id: property.property_id,
+      title: property.title,
+      address: `${property.address.street}, ${property.address.city}, ${property.address.state} ${property.zip_code}`,
+      price: property.price,
+      bedrooms: property.bedrooms,
+      bathrooms: property.bathrooms,
+      imageUrl:
+        'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800',
+      imageAlt: 'Representative sample house; not the fictional property',
+      listingUrl: '#demo-listing-notice',
+    }))
+  : []
 
 const sponsor: Sponsor = {
   businessName: 'Neighborhood Home Services',
   message: 'Explore local help for your next move.',
-  websiteUrl: 'https://www.google.com/maps/search/moving+services+Los+Angeles/',
+  websiteUrl:
+    'https://www.google.com/maps/search/moving+services+Los+Angeles/',
 }
 
 function App() {
@@ -65,8 +49,17 @@ function App() {
 
       <section aria-labelledby="listings-heading">
         <h2 id="listings-heading">Available properties</h2>
-        <p>Sample listings and representative photos for demonstration.</p>
-        {visibleProperties.length > 0 ? (
+
+        <p id="demo-listing-notice">
+          Five fictional listings for a student project. Photos are
+          representative. These properties are not offered for sale.
+        </p>
+
+        {!validation.success ? (
+          <p role="alert">
+            Listing data could not be loaded because it failed validation.
+          </p>
+        ) : visibleProperties.length > 0 ? (
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {visibleProperties.map((property) => (
               <PropertyCard key={property.id} property={property} />
