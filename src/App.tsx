@@ -12,7 +12,8 @@ const properties: Property[] = [
     price: 285000,
     bedrooms: 2,
     bathrooms: 1,
-    imageUrl: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800',
+    imageUrl: '/images/sunny-bungalow-384.webp',
+    imageSrcSet: '/images/sunny-bungalow-384.webp 384w, /images/sunny-bungalow-768.webp 768w',
     imageAlt: 'Modern white house beside a swimming pool',
     listingUrl: 'https://www.zillow.com/homes/Los-Angeles,-CA_rb/',
   },
@@ -64,7 +65,10 @@ function App() {
       <SearchFilters onSearch={setFilters} />
 
       <section aria-labelledby="listings-heading">
-        <h2 id="listings-heading">Available properties</h2>
+        <h2 id="listings-heading" className="flex items-center gap-2">
+          <img src="/images/properties-icon.svg" alt="" width={20} height={20} />
+          Available properties
+        </h2>
         <p>Sample listings and representative photos for demonstration.</p>
         {visibleProperties.length > 0 ? (
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
