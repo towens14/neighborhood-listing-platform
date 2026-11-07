@@ -27,3 +27,6 @@ dist-ssr
 .env
 .env*.local
 .next/
+
+next-env.d.ts
+*.tsbuildinfo

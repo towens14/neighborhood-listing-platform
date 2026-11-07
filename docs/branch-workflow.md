@@ -11,7 +11,7 @@ Neighborhood Listing Platform — Local Merchant Services & Appointment Booking 
 
 ## Development Environment
 - React and TypeScript
-- Vite
+- Next.js App Router
 - Tailwind CSS
 - Supabase PostgreSQL
 - GitHub for version control

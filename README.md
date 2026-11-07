@@ -1,75 +1,38 @@
-# React + TypeScript + Vite
+# Neighborhood Listing Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The properties page is available at `/`. The exam services directory and booking form are available at `/services`.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Use Node.js 22 or newer. Create a git-ignored `.env.local` with the URL and publishable key of your exam Supabase project:
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```dotenv
+SUPABASE_URL=https://your-project.supabase.co
+SUPABASE_PUBLISHABLE_KEY=your-project-publishable-key
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Use the same variables in the hosting environment. The services and booking routes use the publishable key on the server. Provider writes pass the authenticated user's access token to Supabase so row-level security applies. Elevated database setup and administration use the Supabase dashboard.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Apply the versioned SQL migrations in order to the exam database. Provision provider profiles with a trusted account. An approved service is needed to exercise the booking form.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm ci
+npm run dev
 ```
+
+## Verify
+
+Run `npm run build` and `npm run lint`. On `/services`, check the 1/2/3-column layout at widths of 360, 800, and 1200 pixels. Use Tab and Shift+Tab to move through the controls, Enter to open a booking form, and Space to activate the submit button. Verify visible focus and the resulting confirmation or error.
+
+`GET /api/services` returns approved service details. To create a draft, send `POST /api/services` with an authenticated provider's Supabase access token as a bearer token and this JSON body:
+
+```json
+{
+  "title": "Home inspection",
+  "hourly_rate": 80,
+  "duration_minutes": 45,
+  "coverage_radius_miles": 10
+}
+```
+
+See the [requirements](docs/requirements.md) and [security audit](docs/security-audit.md) for the exam scope and verification evidence.
