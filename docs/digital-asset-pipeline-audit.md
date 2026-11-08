@@ -29,7 +29,7 @@ This build uses React and Vite. The components below use native JSX `<img>` elem
 
 - **Source.** `public/images/neighborhood-services-banner.svg`, served at `/images/neighborhood-services-banner.svg` in the Neighborhood Home Services sample promotion.
 - **Permission and proof.** Original AI-assisted SVG made for the demo. The SVG source is included. Business-owner authorization is unverified because the promotion uses a sample sponsor.
-- **Administrative approval.** Unverified. The checked-in schema uses `public.sponsors.status = 'approved'` as the public visibility condition. The demo banner is hard-coded and has no verified sponsor row or recorded approval tied to the artwork.
+- **Administrative approval.** The Supabase Table Editor shows a `public.sponsors` row named `Neighborhood Home Services (Demo)` with `status = 'approved'`. This is a sponsor-level approval. The homepage references the SVG directly, and the sponsor row has no verified link to the specific image file.
 - **Purpose and alt.** Decorative. The adjoining heading, copy, and link convey the promotion. `alt=""` keeps screen readers from repeating that information.
 - **Responsive behavior.** The browser measured **288 CSS px** at both 390 px and 1280 px.
 - **Risk and optimization.** A banner with no reserved dimensions can shift nearby text. The `width={288}` and `height={108}` attributes reserve the aspect ratio. `max-w-full h-auto` constrains the artwork to its container. The SVG uses simple vector paths, and `loading="lazy"` allows the browser to defer loading the banner when it is farther down the page.
@@ -81,4 +81,4 @@ To reproduce in Chrome DevTools, open **Network → Img**, select **Disable cach
 
 ## Evidence still needed for the approval criterion
 
-To satisfy the administrative clearance requirement, use the matching live approval record for each audited asset or confirm what evidence the instructor accepts for static UI assets. For the sponsor category, use the actual partner’s authorization and a matching approved record. If the approved partner artwork differs from the sample SVG, measure that artwork separately.
+Asset B has a verified demo sponsor approval. An approval tied to the exact SVG and authorization from a real business partner remain unverified. Assets A and C still need matching approval records or instructor guidance on acceptable evidence for demo and static assets.
