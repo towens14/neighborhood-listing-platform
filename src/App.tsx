@@ -1,3 +1,5 @@
+'use client'
+
 import { useState } from 'react'
 import PropertyCard from './components/PropertyCard'
 import SearchFilters, { type FilterValues } from './components/SearchFilters'
