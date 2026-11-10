@@ -1,0 +1,174 @@
+| Stakeholder | Known from the assignment | Assumptions to test |
+| --- | --- | --- |
+| **Property professional** | The platform includes property listings and requires a workflow for approving listing content. | The property professional may need to preview edits, see who approves them, and check whether a listing is ready to publish. |
+| **Local sponsor** | The platform includes local sponsors and requires a workflow for approving sponsor claims. | The sponsor may want to preview where their promotion appears, know who approves it, and measure success through clicks or inquiries. |
+
+## Draft Value Proposition
+
+The platform helps property professionals present listings and local sponsors share promotions with people browsing those listings. The proposed approval workflow lets each group check its content for accuracy before it goes live. Discovery will help us determine who should approve each type of content, what would make the workflow accessible, and how each group would measure success.
+
+## Discovery Interview Guide
+
+1. Walk me through how you prepare a property listing or local promotion to share today.
+2. Who are you trying to reach, and what information do they usually need?
+3. What, if anything, takes the most time or effort in your current workflow?
+4.  Who, if anyone, reviews your content before it goes live? If someone does, what do they usually check?
+5. How do you handle corrections or updates after content is published?
+6. How, if at all, do you track or evaluate how a listing or promotion performs?
+7. What barriers, if any, make it harder for you to create, review, or publish content?
+8. What barriers, if any, might your audience encounter when reading or interacting with that content?
+
+## Interview Invitation and Consent
+
+**Draft for instructor review. For this assignment, we plan to use a simulated interview.**
+
+### Invitation
+
+Hi, I’m a Cal State LA student working on a class project about how property professionals and local sponsors prepare, review, and publish content. I’d like to invite you to a 15-minute interview about your workflow. Taking part is voluntary.
+
+With your permission, I’ll take brief notes without your name or identifying details. Our team will use those notes to develop project requirements. De-identified themes and requirements may appear in our class submission and GitHub repository. The interview will not be recorded.
+
+### Consent
+
+Before we start, do you agree to participate and allow me to take brief, de-identified notes for the uses described above? You can skip any question or stop at any time. I’ll proceed only if you agree.
+
+## Simulated Interview Notes
+
+ChatGPT generated these fictional role-play responses for a class exercise.
+No stakeholders were contacted. The responses are assumptions to validate
+with real stakeholders.
+
+### Property Professional
+
+- **PP-01 (Q1–Q3):** I collect the property details and photos, draft the listing, and post it online. I’m trying to reach people looking for a home nearby. They usually ask about price, availability, and amenities. The most time-consuming part is checking that the details match across the places where I post.
+- **PP-02 (Q4–Q5):** I usually review my own listings. If a detail is unclear, I ask the property owner to confirm it. If availability changes after publication, I edit the original listing and update the other places where I shared it.
+- **PP-03 (Q6–Q8):** I judge success by whether the listing leads to relevant inquiries or tour requests. I usually check listings on my phone, where a cramped edit screen makes details easy to miss. For readers, putting the rent or contact information only in an image makes it harder to find and can make it inaccessible to someone using a screen reader.
+
+### Local Sponsor
+
+- **LS-01 (Q1–Q3):** I write a short offer, pick a photo, and share it on social media. I’m trying to reach people who live or shop nearby. They usually want to know what the offer includes, when it ends, and where they can use it. I spend the most time rewriting the offer to fit different formats.
+- **LS-02 (Q4–Q5):** I check the price, dates, and restrictions myself before posting. If someone else will publish the promotion, I want to preview it first. If the offer changes, I update the original post, but older copies can still circulate.
+- **LS-03 (Q6–Q8):** I don’t track every promotion. For offers with a discount code, I can count how many people use it. On my phone, it’s hard to tell whether an uploaded image will be cropped. Customers may miss the expiration date if it appears only in small text on the graphic.
+
+## Interview Themes and Candidate Requirements
+
+These findings come from simulated interviews. Each candidate requirement is an
+inference to validate with real stakeholders.
+
+| Theme | Supporting notes | Candidate requirement (inference) | What to confirm |
+| --- | --- | --- | --- |
+| Keeping content consistent across channels | PP-01, PP-02, LS-01, LS-02 (both roles) | Allow users to edit a single saved listing or offer and copy its current details for reposting. | Which channels do users update, and would copying, exporting, or automatic syncing fit their workflow? |
+| Formatting and previewing promotions | LS-01, LS-02, LS-03 (local sponsor) | Show the sponsor a mobile preview of the offer and its image crop before publication. | Which placements need previews, and do sponsors need manual crop controls or formatting templates? |
+| Editing on a phone | PP-03, LS-03 (both roles) | At a 360 px viewport, display key fields and image controls without horizontal scrolling. | Which editing tasks do stakeholders perform on phones, and which screen sizes should be tested? |
+| Accessible listing and offer details | PP-03, LS-01, LS-03 (both roles) | Display rent, contact details, offer restrictions, and expiration dates as readable text when applicable, even when an image is attached. | Which fields should be required, and would an accessibility reminder help during publishing? |
+| Updating published content | PP-02, LS-02 (both roles). LS-02 specifically mentions older copies circulating. | After an edit is published, show the latest approved details on the platform page. | Would an updated timestamp, expiration notice, or list of places where the content was shared help? |
+| Measuring results | PP-03, LS-03 (both roles) | Show a count of tour requests per listing. Evaluate redemption tracking for sponsors who use discount codes. | Which actions count as success, and how could the platform reliably capture them? |
+
+## Stakeholder Personas
+
+These personas are working hypotheses based on simulated interview notes.
+Each assumption needs confirmation from real stakeholders.
+
+### Property Professional
+
+- **Goal:** Publish accurate property listings that generate relevant inquiries and tour requests. (PP-01, PP-03)
+- **Workflow:** Collect property details and photos, review the draft, and ask the property owner to confirm unclear information. Update the listing when availability changes. (PP-01, PP-02)
+- **Friction:** Keeping details consistent across channels takes time. A cramped phone editor makes details easy to miss, and readers may have trouble accessing rent or contact information placed only in an image. (PP-01, PP-03)
+- **Assumption to validate:** Would keeping one editable listing draft reduce the effort of updating multiple channels?
+
+### Local Sponsor
+
+- **Goal:** Share a clear offer with nearby shoppers and, when a discount code is available, gauge interest through redemptions. (LS-01, LS-03)
+- **Workflow:** Draft a short offer, choose a photo, and check the price, dates, and restrictions. Preview the offer if someone else will publish it. (LS-01, LS-02)
+- **Friction:** Adapting the offer for different formats takes time. Image cropping is hard to predict on a phone, and older copies can circulate after an offer changes. (LS-01, LS-02, LS-03)
+- **Assumption to validate:** Would a mobile preview showing the crop and offer details help sponsors catch errors before publishing?
+
+## Product Backlog
+
+These candidate stories come from simulated discovery. Priority is proposed.
+Assign each story to a teammate when you create the GitHub Project board.
+
+| ID | Priority | User story | Source |
+| --- | --- | --- | --- |
+| US-01 | High | As a property professional, I want to save listing details in one draft so that I can reuse the same information when I post in multiple places. | PP-01, PP-02 |
+| US-02 | High | As a property professional, I want to review the listing before publishing so that I can verify its details. | PP-02 |
+| US-03 | Medium | As a property professional, I want to update a published listing’s availability so that prospective renters can see its current status. | PP-02 |
+| US-04 | High | As a property professional, I want rent and contact information to appear as text so that readers can access those details even if they cannot read the listing image. | PP-03 |
+| US-05 | High | As a local sponsor, I want to preview my offer on a phone-sized screen so that I can check the image crop and offer details before it goes live. | LS-02, LS-03 |
+| US-06 | High | As a local sponsor, I want to approve the price, dates, and restrictions before someone else publishes my offer so that customers see the terms I reviewed. | LS-02 |
+| US-07 | Medium | As a local sponsor, I want the expiration date and restrictions to appear as text so that customers can read the terms even if they cannot read the graphic. | LS-01, LS-03 |
+| US-08 | Low | As a property professional, I want to see how many tour requests a listing received so that I can gauge interest. | PP-03 |
+
+### Acceptance Criteria for High-Priority Stories
+
+| ID | Given | When | Then |
+| --- | --- | --- | --- |
+| US-01 | A property professional has entered a listing’s price, availability, and amenities | They save the draft and reopen it | The saved values appear in the corresponding fields and the draft remains unpublished. |
+| US-02 | A listing draft is awaiting review | The property professional opens the preview and approves it | The preview shows the saved listing details and the listing becomes eligible for publication. |
+| US-04 | A published listing has a photo, rent, and contact information | A visitor opens it with images disabled | The rent and contact information are still visible as text. |
+| US-05 | A sponsor draft contains an image, price, and expiration date | The sponsor opens the preview at a 360 px viewport | The preview shows the image crop used in the mobile layout, and the price and expiration date are readable without horizontal scrolling. |
+| US-06 | A sponsor offer is awaiting approval | A publisher attempts to publish it before the sponsor approves it | Publication is blocked and the offer stays unpublished. |
+| US-06 | A sponsor has approved an offer | Someone changes its price, dates, or restrictions before publication | The offer returns to awaiting approval and publication is blocked until the sponsor approves the revised terms. |
+
+## Content Approval Workflow
+
+This is a proposed workflow based on simulated discovery.
+
+### Property listings
+1. The property professional saves a draft and previews its price, availability,
+   amenities, and contact information.
+2. The property professional confirms any unclear details with the property
+   owner, then approves the draft. Only approved listings can be published.
+3. The published listing displays rent and contact information as text.
+
+### Sponsor offers
+1. The sponsor reviews the offer's price, dates, restrictions, and claims.
+2. The publisher can publish only after the sponsor approves the offer.
+3. If the price, dates, or restrictions change before publication, the offer
+   returns to Awaiting Approval. The sponsor must approve the revised terms.
+4. The published offer displays its expiration date and restrictions as text.
+
+## AI Provenance Log
+### Gemini — Interview question review
+- Prompt: Review these eight interview questions for a student project. Flag any leading wording, unsupported assumptions, or requests for sensitive information. Suggest neutral rewrites only where needed, and explain each change briefly.## Discovery Interview Guide
+
+1. Walk me through how you prepare a property listing or local promotion to share today.
+2. Who are you trying to reach, and what information do they usually need?
+3. What, if anything, takes the most time or effort in your current workflow?
+4. Who, if anyone, reviews your content before it goes live, and what do they check?
+5. How do you handle corrections or updates after content is published?
+6. How do you tell whether a listing or promotion achieved what you wanted?
+7. What barriers, if any, make it harder for you to create, review, or publish content?
+8. What barriers, if any, might your audience encounter when reading or interacting with that content?
+- Useful output: Gemini suggested making the follow-up in Q4 conditional on having a reviewer and adding “if at all” to Q6 so participants can say they do not track performance. I used both revisions.
+- Rejected or revised output: I did not adopt Gemini’s claim that Q4 assumed everyone had a reviewer. The original already said “if anyone.” The revision clarifies when to ask the follow-up.
+- Verification: I compared the revisions with the original questions and checked that the guide still covers workflow, audience, content approval, success measures, and accessibility without requesting sensitive personal information.
+- Commit: [Add the link after committing the revised guide.]
+
+
+Analyze the simulated interview notes below for a student project about
+a property listing and local sponsor platform.
+
+Create a table with four columns:
+Theme | Supporting note IDs | Candidate requirement | Uncertainty
+
+For each row:
+- Cite the note IDs that support the theme.
+- Say whether the theme appears in both roles or only one.
+- Label any interpretation beyond what the notes explicitly say as “Inference.”
+- Suggest a testable requirement and identify what a real stakeholder
+  would need to confirm.
+
+Do not invent quotes, facts, or stakeholder claims. Treat these notes as
+fictional role-play, not evidence from real interviews.
+
+Simulated interview notes:
+[Replace this line with all six notes.] 
+
+### Google AI Studio — Theme analysis
+
+- **Prompt:** [Paste the exact prompt you ran, including the six simulated notes.]
+- **Useful output:** The six themes and their initial links to the simulated notes.
+- **Revised or rejected output:** Automatic syncing and third-party retraction were moved to stakeholder follow-up. The notes did not establish that formatting reduced promotion frequency, stale offers caused financial loss, or users preferred simple analytics. The 360 px viewport is a proposed test condition.
+- **Verification:** ChatGPT compared all six rows with the original simulated notes. The revised table distinguishes the sponsor's stale-copy concern from the listing update workflow and adds LS-01 as the source for offer restrictions.
+- **Commit:** [Add the link to the commit containing the revised theme table.]
