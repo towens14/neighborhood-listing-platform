@@ -6,7 +6,7 @@ export interface Property {
   bedrooms: number
   bathrooms: number
   imageUrl: string
-imageSrcSet?: string
+  imageSrcSet?: string
   imageAlt: string
   listingUrl: string
 }

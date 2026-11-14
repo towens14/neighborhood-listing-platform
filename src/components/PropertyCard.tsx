@@ -1,6 +1,6 @@
- 'use client'
+'use client'
 
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import type { Property } from '../types'
 
 interface PropertyCardProps {
@@ -9,6 +9,13 @@ interface PropertyCardProps {
 
 export default function PropertyCard({ property }: PropertyCardProps) {
   const [imageFailed, setImageFailed] = useState(false)
+
+  const checkImage = useCallback((image: HTMLImageElement | null) => {
+    // The request can fail before React attaches the error handler.
+    if (image?.complete && image.naturalWidth === 0) {
+      setImageFailed(true)
+    }
+  }, [])
 
   const price = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -19,6 +26,9 @@ export default function PropertyCard({ property }: PropertyCardProps) {
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
       <img
+        ref={checkImage}
+        width={768}
+        height={576}
         className="aspect-[4/3] w-full object-cover"
         src={imageFailed ? '/images/property-placeholder.svg' : property.imageUrl}
         srcSet={imageFailed ? undefined : property.imageSrcSet}

@@ -1,3 +1,4 @@
+import { validateSponsorForPublication } from '../lib/sponsor-validation'
 import type { Sponsor } from '../types'
 
 interface SponsorBannerProps {
@@ -7,22 +8,7 @@ interface SponsorBannerProps {
 export default function SponsorBanner({
   sponsor,
 }: SponsorBannerProps) {
-  const today = new Date().toISOString().slice(0, 10)
-
-  const isApproved =
-    sponsor.approvalStatus === 'approved' &&
-    Boolean(sponsor.approvedBy?.trim()) &&
-    Boolean(sponsor.approvedAt)
-
-  const isNotExpired =
-    !sponsor.offerEndDate ||
-    sponsor.offerEndDate >= today
-
-  const isValidLength =
-    sponsor.message.length > 0 &&
-    sponsor.message.length <= 120
-
-  if (!isApproved || !isNotExpired || !isValidLength) {
+  if (!validateSponsorForPublication(sponsor).valid) {
     return null
   }
 

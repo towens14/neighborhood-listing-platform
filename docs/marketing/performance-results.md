@@ -246,3 +246,17 @@ The placeholder asset loads successfully.
 
 Final in-card fallback verification is pending.
 
+
+## Production follow-up
+
+Compared the local production homepage from `main` at `7362ea1` with the Lab 7 follow-up. Sizes below are response body bytes. The shell comparison fetches the HTML and each unique CSS or JS URL referenced in the HTML without compression. It excludes images, headers, and browser-initiated requests.
+
+| Measurement | Before | After |
+| --- | ---: | ---: |
+| Sunny bungalow photo, original JPEG versus 384 px WebP | 90,371 B | 11,238 B |
+| Sunny bungalow photo, original JPEG versus 768 px WebP | 90,371 B | 31,128 B |
+| Production HTML and referenced CSS/JS | 602,038 B | 709,136 B |
+
+The two WebP choices reduce the individual photo body by 87.6% and 65.6%, respectively. The broader branch increases the uncompressed HTML/CSS/JS total by 107,098 B. These measurements cover different resource sets. The browser’s full transferred page weight and comparable production LCP remain unmeasured. The earlier 1.6 s development LCP and Slow 4G observation are retained above.
+
+The homepage now uses the Sunny bungalow WebP variants. Vitest covers an image already broken when React attaches the element and an error fired after render. Both tests pass and verify the local fallback; the first also checks that the listing title stays visible and the broken responsive source set is cleared. A Chromium startup restriction prevented the blocked-request browser retest. ESLint and the Next.js production build pass. Run the test suite with `npx vitest run --environment jsdom` (14 tests).

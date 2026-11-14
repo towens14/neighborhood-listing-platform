@@ -1,316 +1,35 @@
-\## 4A. ChatGPT Claims Review
+# Lab 7 Sponsor Copy Review
 
+Team A — Aster · Tavia Owens · Neighborhood Listing Platform
 
+## Sponsor brief
 
-Review Date: November 10, 2026
+The supplied classroom scenario identifies Aster Neighborhood Services as a fictional residential cleaning business in Los Angeles. No offer, street address, campaign dates, or sponsor URL was supplied. The asset provenance and alt-text notes are in the [asset audit](../digital-asset-pipeline-audit.md).
 
-Reviewer: ChatGPT
+## Prompt and review
 
-Review Scope: Three fictional sponsor copy variants
+The generation prompt recorded for ChatGPT requested three blurbs using only supplied facts, each under 120 characters, with a fact-to-phrase trace. It prohibited invented facts, superlatives, discounts, guarantees, urgency, and demographic targeting. ChatGPT reviewed the three results for unsupported and discriminatory wording. Gemini independently reviewed them in Google AI Studio on November 10, 2026 for factual fidelity, wording, and length.
 
+| Raw draft | Characters | Fact-to-phrase trace | Review |
+| --- | ---: | --- | --- |
+| Aster Neighborhood Services provides residential cleaning in Los Angeles. | 73 | “Aster Neighborhood Services” → name, “residential cleaning” → service, “Los Angeles” → location | ChatGPT and Gemini passed factual and wording checks |
+| Looking for residential cleaning? Learn about Aster Neighborhood Services in Los Angeles. | 89 | “Aster Neighborhood Services” → name, “residential cleaning” → service, “Los Angeles” → location | ChatGPT and Gemini passed factual and wording checks |
+| Explore residential cleaning services from Aster Neighborhood Services in Los Angeles. | 86 | “Aster Neighborhood Services” → name, “residential cleaning” → service, “Los Angeles” → location | ChatGPT and Gemini passed factual and wording checks |
 
+All three variants are useful classroom drafts. Neither review identified a sentence that needed rejection. Gemini recorded no publication authorization for any variant. The draft copy and model reviews are kept in this document outside the application’s runtime copy.
 
-Variant 1: PASS
+## Human approval and publication
 
-Variant 2: PASS
+| Copy | Status | Human approver | Approval date |
+| --- | --- | --- | --- |
+| Aster variants 1–3 | Draft for publication | No verified publication approval | No recorded date |
 
-Variant 3: PASS
+The original review records asset/copy publication authorization separately from model review. The application uses the same validation function at the API and banner for status, human approver, approval date, offer end date, and the 120-character maximum. The API validates payloads and does not publish them. The homepage has no approved Aster promotion. The automated approved test record is synthetic and the banner labels that display state “Sponsored Advertisement.”
 
+If a claim is wrong, the designated content administrator withdraws the published copy immediately. Record the affected wording and correction, put the revision in draft, verify it against the sponsor facts, and record a fresh human approval before republication.
 
+## Verification and attribution
 
-All three variants:
-
-\- Contain fewer than 120 characters
-
-\- Match the supplied fictional sponsor facts
-
-\- Contain no unsupported guarantees
-
-\- Contain no false urgency
-
-\- Contain no discriminatory language
-
-\- Contain no unverified discounts
-
-
-
-Limitations:
-
-The sponsor is fictional. No actual business
-
-authorization or offer verification exists.
-
-
-
-Final Approval Status: draft
-
-Publication Authorized: No
-
-
-
-Gemini independent verification: Pending
-
-Human approval: Pending# Lab 7: AI-Assisted Marketing Copy Review
-
-
-
-\## Project Information
-
-Project: Neighborhood Listing Platform
-
-Team: Team A — Aster
-
-Student: Tavia Owens
-
-Branch: lab7/media-marketing-copy
-
-
-
-\## 1. Purpose
-
-Create factual, accessible promotional content for local
-
-business sponsors while requiring human approval before
-
-publication.
-
-
-
-\## 2. Sponsor Facts
-
-Business Name: Pending verification
-
-Approved Offer: Pending verification
-
-Business Address: Pending verification
-
-Website URL: Pending verification
-
-Offer Start Date: Pending verification
-
-Offer End Date: Pending verification
-
-
-
-Prohibited Claims:
-
-\- Unsupported guarantees
-
-\- False urgency
-
-\- Unverified discounts
-
-\- Discriminatory language
-
-\- Claims not supported by sponsor information
-
-
-
-\## 3. ChatGPT Prompt
-
-Using only the verified sponsor facts, create three
-
-promotional blurbs under 120 characters each.
-
-
-
-Do not invent facts, guarantees, discounts, urgency,
-
-superlatives, or demographic targeting.
-
-
-
-Provide a fact-to-phrase trace for each variant.
-
-
-
-\## 4. AI-Generated Copy
-
-Status: Pending verified sponsor facts.
-
-
-
-Variant 1:Aster Neighborhood Services provides residential cleaning in Los Angeles.
-
-
-
-
-
-Variant 2:Looking for residential cleaning? Learn about Aster Neighborhood Services in Los Angeles.
-
-
-
-
-
-Variant 3:Explore residential cleaning services from Aster Neighborhood Services in Los Angeles.
-
-
-
-
-
-\## 5. Gemini Verification
-
-Status: ## 5. Gemini Verification
-
-
-
-Verification Date: November 10, 2026
-
-AI Tool: Google AI Studio (Gemini)
-
-Verification Type: Independent factual review
-
-
-
-\### Results
-
-
-
-| Check | Variant 1 | Variant 2 | Variant 3 |
-
-|---|---|---|---|
-
-| Factual accuracy | PASS | PASS | PASS |
-
-| Unsupported claims | None | None | None |
-
-| Discriminatory language | None | None | None |
-
-| False urgency | None | None | None |
-
-| Guarantees | None | None | None |
-
-| Character limit | PASS | PASS | PASS |
-
-| Ready for publication | NO | NO | NO |
-
-
-
-\### Gemini Conclusion
-
-
-
-All three variants accurately reflect the supplied
-
-fictional sponsor facts.
-
-
-
-No unsupported claims, misleading language,
-
-discriminatory wording, urgency, or guarantees
-
-were identified.
-
-
-
-All advertisements meet the 120-character limit.
-
-
-
-\### Publication Decision
-
-
-
-Status: DRAFT
-
-Human Approval: NOT OBTAINED
-
-Publication Authorized: NO
-
-
-
-Reason:
-
-The business is fictional, and no real sponsor
-
-has authorized publication.
-
-
-
-\### AI Comparison
-
-
-
-ChatGPT: PASS for all three variants.
-
-Gemini: PASS for all three variants.
-
-
-
-Both AI systems agreed that the copy follows
-
-the supplied facts and wording constraints.
-
-
-
-Independent Review: Completed
-
-Human Approval: Pending
-
-
-
-Compare each variant against the original sponsor facts.
-
-Identify unsupported claims or misleading language.
-
-
-
-\## 6. Human Approval
-
-Approval Status: draft
-
-Approved By: Pending
-
-Approval Date: Pending
-
-
-
-Only approved promotional copy may be published.
-
-
-
-\## 7. Publication Rules
-
-\- Maximum promotional message length: 120 characters
-
-\- Approval required before publication
-
-\- Expired offers must not display
-
-\- Sponsored content must be clearly identified
-
-\- Unverified claims must be rejected
-
-
-
-\## 8. Corrections and Unpublishing
-
-If an advertisement contains inaccurate information,
-
-the content administrator must immediately unpublish it.
-
-
-
-The corrected advertisement must undergo another
-
-human review before republication.
-
-
-
-\## 9. AI Collaboration Log
-
-AI Tools: ChatGPT and Google Gemini
-
-ChatGPT Role: Copy generation and claims review
-
-Gemini Role: Independent factual verification
-
-Human Role: Final approval and publication decision
-
-
-
-Verification Evidence: Pending
-
-Commit Reference: Pending
-
+- Original media and sponsor validation implementation and documented AI reviews are in commit [4511654](https://github.com/towens14/neighborhood-listing-platform/commit/45116540928d30326e7e7c6a6a66502686442900).
+- The [performance record](performance-results.md) contains the slow-network observation, production byte comparison, and fallback test results.
+- [Pull request #20](https://github.com/towens14/neighborhood-listing-platform/pull/20) documents Tavia Owens’s individual contribution.
