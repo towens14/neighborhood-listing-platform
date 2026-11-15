@@ -8,7 +8,8 @@
     "build": "next build",
     "lint": "eslint .",
     "preview": "next start",
-    "start": "next start"
+    "start": "next start",
+    "test": "vitest run --environment jsdom"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.118.0",
