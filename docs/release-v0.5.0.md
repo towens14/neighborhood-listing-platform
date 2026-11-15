@@ -57,3 +57,19 @@ Attributable prior contributions by Tavia Owens include `4511654` (Lab 7 media a
 **Rejected for a technical reason:** Treating a mock Supabase response as proof of RLS enforcement. The mock cannot exercise PostgreSQL policies or JWT roles. Verify role access after a fresh migration on an actual Supabase database.
 
 **Verification:** Local clean install, lint, 17 tests, production build, and mock-backed smoke checks. The candidate PR identifies the associated changes. The prior [ChatGPT and Gemini copy review](marketing/sponsor-copy-review.md) is evidence for Lab 7.
+
+## Fresh database and RLS follow-up
+
+The [first candidate CI run](https://github.com/towens14/neighborhood-listing-platform/actions/runs/43767016378) completed successfully on commit `af4cec1`.
+
+A fresh in-memory PostgreSQL instance (PGlite) applied all three checked-in migrations in order. The test bootstrapped Supabase-compatible roles and a simulated authenticated identity, loaded a fictional provider and admin, and exercised five access checks:
+
+- Anonymous readers see the approved service only.
+- A draft sponsor stays hidden from anonymous readers.
+- Anonymous users cannot read bookings.
+- A provider cannot approve their own service.
+- A provider cannot change their profile role to admin.
+
+The reproducible script is `scripts/release-rls.mjs`. Run from the repository root. To avoid changing project dependencies, create a temporary directory, install `@electric-sql/pglite` there, copy the script into that directory, and run the copied script with Node while keeping the repository as the current working directory.
+
+This verifies the migration SQL and selected database policies with simulated identities. Hosted Supabase migration and JWT verification, property and sponsor seed ingestion through the approved application pipeline, and production deployment remain pending.
