@@ -36,3 +36,9 @@ Run `npm run build` and `npm run lint`. On `/services`, check the 1/2/3-column l
 ```
 
 See the [requirements](docs/requirements.md) and [security audit](docs/security-audit.md) for the exam scope and verification evidence.
+
+### Sign in and protected pages
+
+Set `SUPABASE_URL` and `SUPABASE_PUBLISHABLE_KEY` in `.env.local` or in the hosting environment. Use an existing email/password user from the corresponding Supabase project. The Account link sends signed-out visitors to `/login`, and sign-in returns them to the requested account page.
+
+`/account` and `/account/listings/new` require a server-verified session. The listing form saves to Supabase with the signed-in user's ID and the existing property ownership policy. The public homepage continues to display the sample properties described above.
