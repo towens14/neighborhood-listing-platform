@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#e2e8f0"/>
+  <path d="M120 150 L200 85 L280 150 V235 H120 Z" fill="#94a3b8"/>
+  <rect x="185" y="180" width="30" height="55" fill="#e2e8f0"/>
+  <text x="200" y="270" text-anchor="middle" font-family="Arial" font-size="16" fill="#334155">
+    Property photo unavailable
+  </text>
+</svg>

@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 export interface FilterValues {
   minBedrooms: number
   maxPrice: number
@@ -8,14 +10,19 @@ interface SearchFiltersProps {
 }
 
 export default function SearchFilters({ onSearch }: SearchFiltersProps) {
+  const [invalidFilters, setInvalidFilters] = useState(false)
+
   function handleSubmit(event: React.SubmitEvent<HTMLFormElement>) {
     event.preventDefault()
 
     const formData = new FormData(event.currentTarget)
-    onSearch({
-      minBedrooms: Number(formData.get('minBedrooms')),
-      maxPrice: Number(formData.get('maxPrice')),
-    })
+    const minBedrooms = Number(formData.get('minBedrooms'))
+    const maxPrice = Number(formData.get('maxPrice'))
+    const invalid = ![0, 1, 2, 3].includes(minBedrooms) ||
+      ![0, 300000, 500000, 750000].includes(maxPrice) ||
+      !formData.get('minBedrooms') || !formData.get('maxPrice')
+    setInvalidFilters(invalid)
+    if (!invalid) onSearch({ minBedrooms, maxPrice })
   }
 
   return (
@@ -40,6 +47,7 @@ export default function SearchFilters({ onSearch }: SearchFiltersProps) {
         </select>
       </div>
 
+      {invalidFilters && <p role="alert">Choose valid property filters.</p>}
       <button type="submit">Search properties</button>
     </form>
   )
