@@ -6,7 +6,7 @@ The candidate integrates Lab 7 over main at `7362ea1`. Its demo scope is propert
 
 | Gate | Evidence or status |
 | --- | --- |
-| PR integration and CI | Candidate includes a GitHub Actions workflow for PRs, main, and tags. Green remote checks and merge remain pending. |
+| PR integration and CI | Candidate includes a GitHub Actions workflow for PRs, main, and tags. [Candidate CI passed](https://github.com/towens14/neighborhood-listing-platform/actions/runs/43964998559) on `43b1725`. Merge remains pending. |
 | Clean install, lint, test, build | Node 24. `npm ci`, `npm run lint`, `npm test` (17 passed), and `npm run build` passed locally. |
 | Production smoke | `node scripts/release-smoke.cjs` launches the production build and a local mock REST service. Homepage and WebP returned 200. Services page rendered an approved synthetic service. |
 | Search happy path | 2+ bedrooms and $300,000 maximum displays the Sunny bungalow only. |
@@ -18,6 +18,12 @@ The candidate integrates Lab 7 over main at `7362ea1`. Its demo scope is propert
 | Fresh database, seed data, RLS | Candidate passes above with mocks and local fixtures. Apply all migrations to fresh Supabase, load fictional data through authorized flows, and verify anonymous and authenticated permissions. |
 | Accessibility, responsive layout, links | Prior [Lab 7 measurements](marketing/performance-results.md) are historical. Repeat keyboard, viewport and visible-link checks on the final deployed commit. |
 | Deployment and tag | Deploy reviewed main, verify runtime environment and configured callback URLs, smoke test the public deployment in a private window, and publish v0.5.0 after all required gates pass. |
+
+## November 22 release verification
+
+On candidate commit `43b1725`, Node 24 successfully ran `npm ci`, `npm run lint`, `npm test` (17 of 17), `npm run build`, and `node scripts/release-smoke.cjs`. The default production build used Turbopack. Production-mode smoke testing confirmed the listings page and WebP response, rendering an approved fictional service, and the API 503 and unavailable state after a simulated database HTTP 500.
+
+A read-only check of the hosted Supabase migration history returned a database authentication error. Hosted schema and JWT-based RLS verification remain pending. A reviewer reported testing listings and services in a live preview on [PR #21](https://github.com/towens14/neighborhood-listing-platform/pull/21), but the preview URL and deployed commit still need to be recorded for the release.
 
 ## Five-minute demo outline
 
