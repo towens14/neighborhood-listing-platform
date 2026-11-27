@@ -8,7 +8,11 @@
     "build": "next build",
     "lint": "eslint .",
     "preview": "next start",
-    "start": "next start"
+    "start": "next start",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "validate:data": "tsx scripts/validate-data.ts",
+    "schema:export": "tsx scripts/export-schema.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.118.0",
@@ -20,7 +24,7 @@
     "react-dom": "^19.2.8",
     "server-only": "^0.0.1",
     "tailwindcss": "^4.3.3",
-    "zod": "^4.6.5"
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
@@ -31,6 +35,9 @@
     "eslint-plugin-react-hooks": "^7.1.1",
     "globals": "^17.12.0",
     "typescript": "~6.0.2",
-    "typescript-eslint": "^8.69.0"
+    "typescript-eslint": "^8.69.0",
+    "tsx": "^4.23.15",
+    "vite": "^8.3.0",
+    "vitest": "^5.0.5"
   }
 }
