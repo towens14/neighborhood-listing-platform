@@ -1,12 +1,12 @@
 import 'server-only'
 import { createClient } from '@supabase/supabase-js'
+import { supabaseConfig } from './supabaseConfig'
 
 export function createServerClient(accessToken?: string) {
-  const url = process.env.SUPABASE_URL
-  const key = process.env.SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_ANON_KEY
-  if (!url || !key) return null
+  const config = supabaseConfig()
+  if (!config) return null
 
-  return createClient(url, key, {
+  return createClient(config.url, config.key, {
     auth: { autoRefreshToken: false, persistSession: false, detectSessionInUrl: false },
     global: accessToken ? { headers: { Authorization: `Bearer ${accessToken}` } } : undefined,
   })

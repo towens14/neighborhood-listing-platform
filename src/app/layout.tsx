@@ -11,6 +11,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <nav aria-label="Main navigation" className="mx-auto flex max-w-7xl gap-6 px-4 pt-5">
           <Link href="/">Properties</Link>
           <Link href="/services">Local services</Link>
+          <Link href="/account">Account</Link>
         </nav>
         {children}
       </body>
